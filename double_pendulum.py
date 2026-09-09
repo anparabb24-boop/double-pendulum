@@ -99,9 +99,10 @@ data = pd.DataFrame({
 # Animation with a fading / limited-length trace
 # ---------------------------------------------------------------------
 fig = plt.figure(figsize=(5, 4))
-ax = fig.add_subplot(autoscale_on=False, xlim=(-L, L), ylim=(-L, L+0.5))
+ax = fig.add_subplot(autoscale_on=False, xlim=(-L-0.5, L+0.5), ylim=(-L-0.5, L+0.5))
 ax.set_aspect('equal')
-ax.grid()
+ax.axis('off')
+ax.grid(False)
 
 line, = ax.plot([], [], 'o-', lw=2)
 trace, = ax.plot([], [], '-', lw=1, ms=2)
